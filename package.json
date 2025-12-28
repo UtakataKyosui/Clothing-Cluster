@@ -1,0 +1,23 @@
+{
+  "name": "clothing-cluster",
+  "version": "0.1.0",
+  "private": true,
+  "description": "服の組み合わせ管理Webアプリケーション",
+  "scripts": {
+    "prepare": "moon --version || npm install -g @moonrepo/cli",
+    "dev": "moon run web:dev",
+    "build": "moon run web:build",
+    "db:generate": "moon run db:generate",
+    "db:migrate": "moon run db:migrate",
+    "db:studio": "moon run db:studio"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@moonrepo/cli": "^1.30.5",
+    "typescript": "^5.7.2"
+  }
+}

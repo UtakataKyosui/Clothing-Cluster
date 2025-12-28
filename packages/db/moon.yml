@@ -1,0 +1,25 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+language: 'typescript'
+type: 'library'
+
+tasks:
+  generate:
+    command: 'drizzle-kit generate'
+    inputs:
+      - 'src/schema.ts'
+      - 'drizzle.config.ts'
+    outputs:
+      - 'src/migrations/**/*'
+
+  migrate:
+    command: 'tsx src/migrate.ts'
+    deps:
+      - '~:generate'
+    inputs:
+      - 'src/migrations/**/*'
+      - 'src/migrate.ts'
+
+  studio:
+    command: 'drizzle-kit studio'
+    local: true

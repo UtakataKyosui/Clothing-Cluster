@@ -1,0 +1,21 @@
+$schema: 'https://moonrepo.dev/schemas/workspace.json'
+
+# Extend from a base configuration
+# extends: './configs/workspace.yml'
+
+# Projects to include in the workspace
+projects:
+  - 'apps/*'
+  - 'packages/*'
+
+# Version control system
+vcs:
+  manager: 'git'
+  defaultBranch: 'main'
+
+# Task runner configuration
+runner:
+  archivableTargets:
+    - 'build'
+  cacheLifetime: '7 days'
+  inheritColorsForPipedTasks: true

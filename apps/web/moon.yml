@@ -1,0 +1,41 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+language: 'typescript'
+type: 'application'
+
+dependsOn:
+  - id: 'db'
+    scope: 'production'
+
+tasks:
+  dev:
+    command: 'next dev --turbopack'
+    local: true
+    options:
+      runInCI: false
+
+  build:
+    command: 'next build'
+    inputs:
+      - 'src/**/*'
+      - 'public/**/*'
+      - 'next.config.ts'
+      - 'tsconfig.json'
+    outputs:
+      - '.next/**/*'
+
+  start:
+    command: 'next start'
+    local: true
+    deps:
+      - '~:build'
+
+  lint:
+    command: 'biome check'
+    inputs:
+      - 'src/**/*'
+
+  format:
+    command: 'biome format --write'
+    inputs:
+      - 'src/**/*'
