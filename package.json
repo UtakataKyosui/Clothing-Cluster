@@ -32,7 +32,7 @@
     "packages/**/*.{ts,tsx}": [
       "pnpm exec biome check --write --unsafe"
     ],
-    "*.{json,yml,yaml}": [
+    "*.json": [
       "pnpm --filter web exec biome format --write"
     ]
   }
