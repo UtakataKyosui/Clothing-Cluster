@@ -5,7 +5,7 @@ type: 'library'
 
 tasks:
   generate:
-    command: 'drizzle-kit generate'
+    command: 'pnpm generate'
     inputs:
       - 'src/schema.ts'
       - 'drizzle.config.ts'
@@ -13,7 +13,7 @@ tasks:
       - 'src/migrations/**/*'
 
   migrate:
-    command: 'tsx src/migrate.ts'
+    command: 'pnpm migrate'
     deps:
       - '~:generate'
     inputs:
@@ -21,5 +21,5 @@ tasks:
       - 'src/migrate.ts'
 
   studio:
-    command: 'drizzle-kit studio'
+    command: 'pnpm studio'
     local: true

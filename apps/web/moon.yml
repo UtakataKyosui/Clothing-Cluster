@@ -9,13 +9,13 @@ dependsOn:
 
 tasks:
   dev:
-    command: 'next dev --turbopack'
+    command: 'pnpm dev'
     local: true
     options:
       runInCI: false
 
   build:
-    command: 'next build'
+    command: 'pnpm build'
     inputs:
       - 'src/**/*'
       - 'public/**/*'
@@ -25,17 +25,17 @@ tasks:
       - '.next/**/*'
 
   start:
-    command: 'next start'
+    command: 'pnpm start'
     local: true
     deps:
       - '~:build'
 
   lint:
-    command: 'biome check'
+    command: 'pnpm lint'
     inputs:
       - 'src/**/*'
 
   format:
-    command: 'biome format --write'
+    command: 'pnpm format'
     inputs:
       - 'src/**/*'
