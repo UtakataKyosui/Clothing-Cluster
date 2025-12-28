@@ -4,7 +4,7 @@
   "private": true,
   "description": "服の組み合わせ管理Webアプリケーション",
   "scripts": {
-    "prepare": "moon --version || npm install -g @moonrepo/cli",
+    "prepare": "husky || true",
     "dev": "moon run web:dev",
     "build": "moon run web:build",
     "db:generate": "moon run db:generate",
@@ -18,6 +18,16 @@
   },
   "devDependencies": {
     "@moonrepo/cli": "^1.30.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "typescript": "^5.7.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "pnpm --filter web exec biome format --write"
+    ],
+    "*.{json,yml,yaml}": [
+      "pnpm --filter web exec biome format --write"
+    ]
   }
 }
