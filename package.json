@@ -23,10 +23,10 @@
     "typescript": "^5.7.2"
   },
   "lint-staged": {
-    "apps/web/src/!(components/ui)/**/*.{ts,tsx}": [
+    "apps/web/src/!(components)/**/*.{ts,tsx}": [
       "pnpm --filter web exec biome check --write --unsafe"
     ],
-    "apps/web/src/!(components)/*.{ts,tsx}": [
+    "apps/web/src/components/!(ui)/**/*.{ts,tsx}": [
       "pnpm --filter web exec biome check --write --unsafe"
     ],
     "packages/**/*.{ts,tsx}": [
