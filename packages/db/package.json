@@ -1,25 +1,27 @@
 {
-    "name": "@clothing-cluster/db",
-    "version": "0.1.0",
-    "private": true,
-    "type": "module",
-    "exports": {
-        ".": "./src/index.ts",
-        "./schema": "./src/schema.ts"
-    },
-    "scripts": {
-        "generate": "drizzle-kit generate",
-        "migrate": "tsx src/migrate.ts",
-        "studio": "drizzle-kit studio"
-    },
-    "dependencies": {
-        "drizzle-orm": "^0.36.4",
-        "postgres": "^3.4.5",
-        "zod": "^3.24.1"
-    },
-    "devDependencies": {
-        "drizzle-kit": "^0.29.1",
-        "tsx": "^4.19.2",
-        "typescript": "^5.7.2"
-    }
+  "name": "@clothing-cluster/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "generate": "drizzle-kit generate",
+    "migrate": "tsx src/migrate.ts",
+    "studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.36.4",
+    "postgres": "^3.4.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.0",
+    "@types/node": "^20",
+    "drizzle-kit": "^0.29.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
 }
